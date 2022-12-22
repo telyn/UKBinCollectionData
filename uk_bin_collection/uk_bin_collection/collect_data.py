@@ -42,6 +42,13 @@ def main(args):
         required=False,
     )
     parser.add_argument(
+        "-c",
+        type=bool,
+        help="Use a common output format",
+        "double-quotes",
+        required=False
+    )
+    parser.add_argument(
         "-n", "--number", type=str, help="House number to parse", required=False
     )
     parser.add_argument("-u", "--uprn", type=str, help="UPRN to parse", required=False)

@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "bins": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Bin"
+            }
+        }
+    },
+    "definitions": {
+        "Bin": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "coarse_type": {
+                    "type": "enum",
+                    "values": [
+                        "refuse",
+                        "recycling",
+                        "garden_waste",
+                        "food_waste"
+                    ]
+                },
+                "fine_type": {
+                    "type": "string",
+                },
+                "collection_date": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "required": [
+                "coarse_type",
+                "fine_type",
+                "collection_date"
+            ]
+        }
+    }
+}

@@ -106,3 +106,13 @@ class AbstractGetBinDataClass(ABC):
         # Output the data
         print(json_data)
         return json_data
+
+    @abstractmethod
+    @classmethod
+    def transform_to_common_output(object):
+        """Abstract class method. takes an object as
+        returned from parse_data, returns
+        an object that matches the common object schema.
+
+        See tests/common_output.schema for the common output schema.
+        """
